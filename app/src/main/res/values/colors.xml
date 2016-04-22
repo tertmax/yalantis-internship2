@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#557cac</color>
+    <color name="colorPrimaryDark">#446389</color>
+    <color name="colorAccent">#ff9400</color>
+    <color name="action_bar">#577bab</color>
+    <color name="in_progress">#ff9400</color>
+    <color name="complete">#2e8b57</color>
+    <color name="left_text">#8b8b8b</color>
+    <color name="background">#eaeaea</color>
+    <color name="general_fragment">#CCCCCC</color>
+    <color name="secondary_fragment">#838383</color>
+    <color name="fragment_background_end">#4a76a4</color>
+    <color name="fragment_background_center">#45b3c3</color>
+    <color name="fragment_background_start">#6082b4</color>
+</resources>

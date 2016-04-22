@@ -1,0 +1,10 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/filter_bar_button"
+        android:icon="@drawable/filter_icon"
+        android:title="@string/filters_button"
+        app:showAsAction="always"/>
+
+</menu>

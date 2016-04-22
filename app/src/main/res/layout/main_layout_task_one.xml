@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/main_layout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:clickable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical"
+    tools:context="com.task.internship.myapplication.MainActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/task1_toolbar"
+        style="@style/Toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/action_bar"
+        android:elevation="@dimen/toolbar_elevation"
+        android:theme="@style/ToolbarColoredBackArrow"/>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin">
+
+            <TextView
+                android:id="@+id/public_utilities_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/text_utilities"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/big_letters"/>
+
+            <TextView
+                android:id="@+id/in_progress_text"
+                style="@style/generalTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/progress_textview_marginTopBotoom"
+                android:layout_marginTop="@dimen/progress_textview_marginTopBotoom"
+                android:background="@drawable/shape_orange"
+                android:paddingBottom="@dimen/progress_textview_paddingbottom_top"
+                android:paddingLeft="@dimen/progress_textview_leftright_padding"
+                android:paddingRight="@dimen/progress_textview_leftright_padding"
+                android:paddingTop="@dimen/progress_textview_paddingbottom_top"
+                android:text="@string/text_in_progress"
+                android:textColor="@android:color/white"/>
+
+            <View
+                style="@style/lineStyle"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/line_height"
+                android:layout_marginBottom="@dimen/line_marginBotoomTop"
+                android:layout_marginTop="@dimen/line_marginBotoomTop"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/created_text"
+                    style="@style/leftTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:paddingBottom="@dimen/general_text_padding"
+                    android:paddingTop="@dimen/general_text_padding"
+                    android:text="@string/text_created"/>
+
+                <TextView
+                    android:id="@+id/date_created_text"
+                    style="@style/generalTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:paddingBottom="@dimen/general_text_padding"
+                    android:paddingTop="@dimen/general_text_padding"
+                    android:text="@string/text_date_created"/>
+
+            </RelativeLayout>
+
+            <View
+                style="@style/lineStyle"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/line_height"
+                android:layout_marginBottom="@dimen/line_marginBotoomTop"
+                android:layout_marginTop="@dimen/line_marginBotoomTop"/>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/registered_text"
+                    style="@style/leftTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:paddingBottom="@dimen/general_text_padding"
+                    android:paddingTop="@dimen/general_text_padding"
+                    android:text="@string/text_registered"/>
+
+                <TextView
+                    android:id="@+id/date_registered_text"
+                    style="@style/generalTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:paddingBottom="@dimen/general_text_padding"
+                    android:paddingTop="@dimen/general_text_padding"
+                    android:text="@string/text_date_registered"/>
+
+            </RelativeLayout>
+
+            <View
+                style="@style/lineStyle"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/line_height"
+                android:layout_marginBottom="@dimen/line_marginBotoomTop"
+                android:layout_marginTop="@dimen/line_marginBotoomTop"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/solve_text"
+                    style="@style/leftTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:paddingBottom="@dimen/general_text_padding"
+                    android:paddingTop="@dimen/general_text_padding"
+                    android:text="@string/text_solve"/>
+
+                <TextView
+                    android:id="@+id/date_solve_text"
+                    style="@style/generalTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:paddingBottom="@dimen/general_text_padding"
+                    android:paddingTop="@dimen/general_text_padding"
+                    android:text="@string/text_date_solve"/>
+
+            </RelativeLayout>
+
+            <View
+                style="@style/lineStyle"
+                android:layout_marginBottom="@dimen/line_marginBotoomTop"
+                android:layout_marginTop="@dimen/line_marginBotoomTop"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/responsible_text"
+                    style="@style/leftTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:paddingBottom="@dimen/general_text_padding"
+                    android:paddingTop="@dimen/general_text_padding"
+                    android:text="@string/text_responsible"/>
+
+                <TextView
+                    android:id="@+id/organization_responsible_text"
+                    style="@style/generalTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:paddingBottom="@dimen/general_text_padding"
+                    android:paddingTop="@dimen/general_text_padding"
+                    android:text="@string/text_tatooine_mvk"/>
+
+            </RelativeLayout>
+
+            <View
+                style="@style/lineStyle"
+                android:layout_marginTop="@dimen/line_marginBotoomTop"/>
+
+            <TextView
+                android:id="@+id/details_text"
+                style="@style/generalTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/description_textview_margin"
+                android:layout_marginTop="@dimen/description_textview_margin"
+                android:text="@string/text_description"
+                android:textColor="@android:color/black"/>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/image_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/recycler_view_height"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>

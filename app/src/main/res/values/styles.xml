@@ -1,0 +1,78 @@
+<resources>
+
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="generalTextStyle">
+        <item name="android:textSize">@dimen/general_text_size</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+    <style name="leftTextStyle" parent="generalTextStyle">
+        <item name="android:textColor">@color/left_text</item>
+    </style>
+
+    <style name="generalFragmentTextStyle" parent="generalTextStyle">
+        <item name="android:fontFamily">Roboto</item>
+    </style>
+
+    <style name="drawerBotTextStyle">
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+    <style name="secondaryFragmentTextStyle">
+        <item name="android:fontFamily">Roboto</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:color">@color/general_fragment</item>
+    </style>
+
+    <style name="boldSecondaryFragmentTextStyle" parent="secondaryFragmentTextStyle">
+        <item name="android:textColor">@color/secondary_fragment</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="tabTextStyle" parent="secondaryFragmentTextStyle">
+        <item name="android:fontFamily">Roboto</item>
+    </style>
+
+    <style name="boldDrawerHeaderText">
+        <item name="android:textColor">@color/general_fragment</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:fontFamily">Roboto</item>
+    </style>
+
+    <style name="lineStyle">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">@dimen/line_height</item>
+        <item name="android:background">@color/left_text</item>
+    </style>
+
+    <style name="Toolbar" parent="@style/Theme.AppCompat.Light.DarkActionBar">
+        <item name="titleTextAppearance">@style/Toolbar.Title</item>
+        <item name="titleMarginStart">15dp</item>
+        <item name="android:paddingRight">11dp</item>
+    </style>
+
+    <style name="Toolbar.Title" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">Roboto</item>
+    </style>
+
+    <style name="ToolbarColoredBackArrow" parent="AppTheme">
+        <item name="android:textColorSecondary">@android:color/white</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
+
+
+</resources>

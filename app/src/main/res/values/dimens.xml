@@ -1,0 +1,33 @@
+<resources>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="general_text_size">16sp</dimen>
+    <dimen name="general_text_padding">3dp</dimen>
+    <dimen name="big_letters">18sp</dimen>
+    <dimen name="custom_row_layout_width">230dp</dimen>
+    <dimen name="recycler_view_height">170dp</dimen>
+    <dimen name="shape_radius">15dp</dimen>
+    <dimen name="recyclerview_margintop">10dp</dimen>
+    <dimen name="description_textview_margin">10dp</dimen>
+    <dimen name="progress_textview_leftright_padding">9dp</dimen>
+    <dimen name="progress_textview_paddingbottom_top">6dp</dimen>
+    <dimen name="progress_textview_marginTopBotoom">10dp</dimen>
+    <dimen name="line_height">1dp</dimen>
+    <dimen name="line_marginBotoomTop">7dp</dimen>
+    <dimen name="toolbar_elevation">5dp</dimen>
+    <dimen name="customrow_paddingright">10dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="fragment_content_margins">16dp</dimen>
+    <dimen name="recycler_content_height">126dp</dimen>
+    <dimen name="like_padding">4dp</dimen>
+    <dimen name="recycler_custom_row_inner_padding">16dp</dimen>
+    <dimen name="recycler_custom_row_inner_padding_two">32dp</dimen>
+    <dimen name="tab_layout_margin">5dp</dimen>
+    <dimen name="drawer_header_text_marginLeft">16dp</dimen>
+    <dimen name="drawer_header_text_marginBot">24dp</dimen>
+    <dimen name="drawer_header_height">100dp</dimen>
+    <dimen name="problem_image_marginTop">25dp</dimen>
+    <dimen name="shape_fragment_radius">8dp</dimen>
+    <dimen name="nav_view_width">300dp</dimen>
+    <dimen name="fab_elevation">5dp</dimen>
+</resources>
