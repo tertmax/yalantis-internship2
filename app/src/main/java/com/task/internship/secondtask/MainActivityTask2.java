@@ -12,7 +12,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-public class MainActivityTask2 extends AppCompatActivity {
+public class MainActivityTask2 extends AppCompatActivity { //[Comment] Put into different packages
 
 
     private ViewPager mPager;
