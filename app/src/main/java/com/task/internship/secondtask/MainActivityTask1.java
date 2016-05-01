@@ -16,7 +16,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivityTask1 extends AppCompatActivity {
+public class MainActivityTask1 extends AppCompatActivity { //[Comment] Bad Name, You have two main activities?
 
     private ProblemEvent mPassedEvent;
 
@@ -58,6 +58,7 @@ public class MainActivityTask1 extends AppCompatActivity {
         switch (item.getItemId()) {
             case android.R.id.home:
                 Toast.makeText(this, "Back button", Toast.LENGTH_SHORT).show();
+                // You should close app, or close drawer
                 onBackPressed();
                 return true;
             default:
@@ -68,7 +69,7 @@ public class MainActivityTask1 extends AppCompatActivity {
     private void initData() {
         setTitle(mPassedEvent.getTitle());
 
-        TextView tv = (TextView) findViewById(R.id.public_utilities_text);
+        TextView tv = (TextView) findViewById(R.id.public_utilities_text); //[Comment] tv - bad name
         tv.setText(mPassedEvent.getDescription());
 
         tv = (TextView) findViewById(R.id.date_registered_text);

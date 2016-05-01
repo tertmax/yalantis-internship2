@@ -15,8 +15,7 @@ import com.shamanland.fab.ShowHideOnScroll;
 
 import java.util.List;
 
-public class FragmentListView extends Fragment {
-
+public class FragmentListView extends Fragment { //[Comment] It's not a list view. It's fragment
     private FragmentListViewAdapter mAdapter;
 
     @Override
@@ -42,7 +41,7 @@ public class FragmentListView extends Fragment {
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                     Intent intent = new Intent(getContext(), MainActivityTask1.class);
                     ProblemEvent pe = (ProblemEvent) mAdapter.getItem(position);
-                    intent.putExtra("pe", pe);
+                    intent.putExtra("pe", pe); //[Comment] pe it's a bad name
                     startActivity(intent);
                 }
             });

@@ -16,7 +16,7 @@ public class TabsPagerAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
         Bundle recyclerKeyBundle = new Bundle();
         FragmentRecyclerView recPageFrag = null;
-        recyclerKeyBundle.putSerializable("recyclerKey", FragmentRecyclerView.RecyclerKey.IN_PROGRESS);
+        recyclerKeyBundle.putSerializable("recyclerKey", FragmentRecyclerView.RecyclerKey.IN_PROGRESS); //[Comment] Hardcode
         recPageFrag = new FragmentRecyclerView();
         recPageFrag.setArguments(recyclerKeyBundle);
 
@@ -24,7 +24,7 @@ public class TabsPagerAdapter extends FragmentPagerAdapter {
             case 0:
                 return recPageFrag;
             case 1:
-                recyclerKeyBundle.putSerializable("recyclerKey", FragmentRecyclerView.RecyclerKey.COMPLETE);
+                recyclerKeyBundle.putSerializable("recyclerKey", FragmentRecyclerView.RecyclerKey.COMPLETE); //[Comment] Hardcode
                 recPageFrag = new FragmentRecyclerView();
                 recPageFrag.setArguments(recyclerKeyBundle);
                 return recPageFrag;
@@ -43,11 +43,11 @@ public class TabsPagerAdapter extends FragmentPagerAdapter {
     public CharSequence getPageTitle(int position) {
         switch (position) {
             case 0:
-                return "В РОБОТІ";
+                return "В РОБОТІ"; //[Comment] Hardcode
             case 1:
-                return "ВИКОНАНО";
+                return "ВИКОНАНО"; //[Comment] Hardcode
             case 2:
-                return "ОЧІКУЄ";
+                return "ОЧІКУЄ"; //[Comment] Hardcode
             default:
                 return null;
         }

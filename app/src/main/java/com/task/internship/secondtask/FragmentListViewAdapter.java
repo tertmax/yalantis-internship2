@@ -32,7 +32,7 @@ public class FragmentListViewAdapter extends BaseAdapter {
     @Override
     public Object getItem(int position) {
         return mDataset.get(position);
-    }
+    } //[Comment] You can return ProblemEvent
 
     @Override
     public long getItemId(int position) {
@@ -42,7 +42,7 @@ public class FragmentListViewAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        View view = convertView;
+        View view = convertView; //[Comment] Very bad. Use viewholder
         if (view == null) {
             view = mInflater.inflate(R.layout.fragment_content_custom_row, parent, false);
         }

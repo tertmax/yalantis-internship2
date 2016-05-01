@@ -32,7 +32,7 @@ public class ProblemEvent implements Parcelable {
     private String mState;
     private List<String> mPictures;
     private String[] mMonths = {"Січ.", "Лют.", "Бер.", "Квіт.", "Трав.", "Черв.",
-            "Лип.", "Серп.", "Вер.", "Жов.", "Лист.", "Груд."};
+            "Лип.", "Серп.", "Вер.", "Жов.", "Лист.", "Груд."}; //[Comment] Hardcode
 
     ProblemEvent(Parcel in) {
 
@@ -69,7 +69,7 @@ public class ProblemEvent implements Parcelable {
         mTitle = problemTitle;
         mLikeCount = likeCount;
         mType = type;
-        if (daysCount == 0) mDays = "терміново";
+        if (daysCount == 0) mDays = "терміново"; //[Comment] Hardcode
         mPictures = new ArrayList<>();
         mState = "В роботі";
     }
@@ -81,14 +81,14 @@ public class ProblemEvent implements Parcelable {
     public void setState(State state) {
         switch (state) {
             case IN_PROGRESS:
-                mState = "В роботі";
+                mState = "В роботі"; //[Comment] Hardcode
                 break;
             case COMPLETE:
-                mState = "Виконано";
-                mDays = "викон.";
+                mState = "Виконано"; //[Comment] Hardcode
+                mDays = "викон."; //[Comment] Hardcode
                 break;
             case WAITING:
-                mState = "Очікує";
+                mState = "Очікує"; //[Comment] Hardcode
                 break;
         }
     }

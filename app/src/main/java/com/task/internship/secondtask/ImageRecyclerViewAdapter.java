@@ -48,7 +48,7 @@ public class ImageRecyclerViewAdapter extends RecyclerView.Adapter<ImageRecycler
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(mContext, " RecyclerView's image " +
+                    Toast.makeText(mContext, " RecyclerView's image " + //[Comment] Hardcode
                                     (getAdapterPosition() + 1) + ": " +
                                     (mDataSet.get(getAdapterPosition())),
                             Toast.LENGTH_SHORT).show();

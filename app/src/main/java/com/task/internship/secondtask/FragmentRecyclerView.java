@@ -14,7 +14,7 @@ import com.shamanland.fab.ShowHideOnScroll;
 
 import java.util.List;
 
-public class FragmentRecyclerView extends Fragment {
+public class FragmentRecyclerView extends Fragment { //[Comment] It's fragment
 
     private List<ProblemEvent> mDataSet;
 
@@ -30,7 +30,7 @@ public class FragmentRecyclerView extends Fragment {
 
         switch (recyclerKey) {
             case IN_PROGRESS:
-                mDataSet = InitData.getRecyclerOneData();
+                mDataSet = InitData.getRecyclerOneData(); //[Comment] Make this only once in App class
                 break;
             case COMPLETE:
                 mDataSet = InitData.getRecyclerTwoData();

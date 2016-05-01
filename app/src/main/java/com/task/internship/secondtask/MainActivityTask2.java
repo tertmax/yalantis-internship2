@@ -74,7 +74,7 @@ public class MainActivityTask2 extends AppCompatActivity {
         if (mPager.getCurrentItem() == 0) {
             super.onBackPressed();
         } else {
-            mPager.setCurrentItem(mPager.getCurrentItem() - 1);
+            mPager.setCurrentItem(mPager.getCurrentItem() - 1);  //[Comment] Wrong back button logic.
         }
     }
 
