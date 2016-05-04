@@ -12,10 +12,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-public class MainActivityTask2 extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity {
 
 
-    private ViewPager mPager;
     private ActionBarDrawerToggle mDrawerToggle;
 
     @Override
@@ -27,7 +26,7 @@ public class MainActivityTask2 extends AppCompatActivity {
         setSupportActionBar(toolbar);
         setTitle(getString(R.string.task2_toolbar_title));
 
-        mPager = (ViewPager) findViewById(R.id.pager);
+        ViewPager pager = (ViewPager) findViewById(R.id.pager);
 
         DrawerLayout mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_main_layout);
         mDrawerToggle = new ActionBarDrawerToggle(
@@ -35,9 +34,9 @@ public class MainActivityTask2 extends AppCompatActivity {
         mDrawerToggle.syncState();
 
         TabLayout tabs = (TabLayout) findViewById(R.id.tabs);
-        TabsPagerAdapter adapter = new TabsPagerAdapter(getSupportFragmentManager());
-        mPager.setAdapter(adapter);
-        tabs.setupWithViewPager(mPager);
+        TabsPagerAdapter adapter = new TabsPagerAdapter(getSupportFragmentManager(), this);
+        pager.setAdapter(adapter);
+        tabs.setupWithViewPager(pager);
 
         TextView drawerTextView = (TextView) findViewById(R.id.drawer_textview);
         String drawerText = getString(R.string.drawer_bottom_text);
@@ -71,11 +70,7 @@ public class MainActivityTask2 extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        if (mPager.getCurrentItem() == 0) {
-            super.onBackPressed();
-        } else {
-            mPager.setCurrentItem(mPager.getCurrentItem() - 1);
-        }
+        super.onBackPressed();
     }
 
 }

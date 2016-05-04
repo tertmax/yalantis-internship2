@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="com.task.internship.secondtask.MainActivityTask2"
+            android:name=".MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme">
             <intent-filter>
@@ -21,7 +21,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.task.internship.secondtask.MainActivityTask1"
+            android:name="com.task.internship.firsttask.EventDetailsActivity"
             android:theme="@style/AppTheme"/>
     </application>
 

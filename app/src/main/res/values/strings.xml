@@ -21,11 +21,38 @@
     <string name="applications_on_map">Звернення на мапі</string>
     <string name="filters_button">Filters</string>
     <string name="account_text">Увійти в аккаунт</string>
+    <string name="extra_key">problemEvent</string>
+    <string name="urgent_list_text">терміново</string>
+    <string name="in_progress_state_text">В роботі</string>
+    <string name="dniv_list_text">" днів"</string>
+    <string name="dni_list_text">" дні"</string>
+    <string name="den_list_text">" день"</string>
+    <string name="complete_state_text">Виконано</string>
+    <string name="complete_list_text">викон.</string>
+    <string name="awaits_state_text">Очікує</string>
+    <string name="in_progress_tab_title">В РОБОТІ</string>
+    <string name="complete_tab_title">ВИКОНАНО</string>
+    <string name="toast_image_recyclerview">"RecyclerView's image "</string>
+    <string name="awaits_tab_title">ОЧІКУЄ</string>
     <string-array name="urls_array">
         <item>http://img2.wikia.nocookie.net/__cb20070317195216/starwars/nl/images/6/6e/Vos_Gesal_Street.jpg</item>
         <item>http://vignette2.wikia.nocookie.net/starwars/images/0/0b/Underlevelscene.JPG/revision/latest?cb=20060712233456</item>
         <item>http://vignette3.wikia.nocookie.net/starwars/images/4/4a/Coruscant_Underworld_concept_art.jpg/revision/latest?cb=20130523085925</item>
         <item>http://www.jeditemplearchives.com/galleries/2012/Review_CloneAttackOnCoruscantROTS/Review_CloneAttackOnCoruscantROTS_still.JPG</item>
+    </string-array>
+    <string-array name="months_array">
+        <item>Січ.</item>
+        <item>Лют.</item>
+        <item>Бер.</item>
+        <item>Квіт.</item>
+        <item>Трав.</item>
+        <item>Черв.</item>
+        <item>Лип.</item>
+        <item>Серп.</item>
+        <item>Вер.</item>
+        <item>Жов.</item>
+        <item>Лист.</item>
+        <item>Груд.</item>
     </string-array>
 
 

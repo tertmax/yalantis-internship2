@@ -1,5 +1,6 @@
 package com.task.internship.secondtask;
 
+import android.content.Context;
 import android.os.Parcel;
 import android.os.Parcelable;
 
@@ -18,6 +19,7 @@ public class ProblemEvent implements Parcelable {
             return new ProblemEvent[size];
         }
     };
+    private Context mContext;
     private String mDescription;
     private String mAddress;
     private String mFirstDate;
@@ -31,8 +33,6 @@ public class ProblemEvent implements Parcelable {
     private ProblemType mType;
     private String mState;
     private List<String> mPictures;
-    private String[] mMonths = {"Січ.", "Лют.", "Бер.", "Квіт.", "Трав.", "Черв.",
-            "Лип.", "Серп.", "Вер.", "Жов.", "Лист.", "Груд."};
 
     ProblemEvent(Parcel in) {
 
@@ -51,27 +51,29 @@ public class ProblemEvent implements Parcelable {
     }
 
     public ProblemEvent(String problemDescription, String problemAddress, String responsible, Calendar firstDate, Calendar registeredDate, Calendar solveDate
-            , String problemTitle, int likeCount, ProblemType type) {
+            , String problemTitle, int likeCount, ProblemType type, Context context) {
+        mContext = context;
         mDescription = problemDescription;
         mAddress = problemAddress;
         mResponsible = responsible;
-        mFirstDate = "" + mMonths[firstDate.get(Calendar.MONTH)] + " " + firstDate.get(Calendar.DAY_OF_MONTH) + ", " + firstDate.get(Calendar.YEAR);
-        mRegisteredDate = "" + mMonths[registeredDate.get(Calendar.MONTH)] + " " + registeredDate.get(Calendar.DAY_OF_MONTH) + ", " + registeredDate.get(Calendar.YEAR);
-        mSolveDate = "" + mMonths[solveDate.get(Calendar.MONTH)] + " " + solveDate.get(Calendar.DAY_OF_MONTH) + ", " + solveDate.get(Calendar.YEAR);
+        String[] months = mContext.getResources().getStringArray(R.array.months_array);
+        mFirstDate = months[firstDate.get(Calendar.MONTH)] + " " + firstDate.get(Calendar.DAY_OF_MONTH) + ", " + firstDate.get(Calendar.YEAR);
+        mRegisteredDate = months[registeredDate.get(Calendar.MONTH)] + " " + registeredDate.get(Calendar.DAY_OF_MONTH) + ", " + registeredDate.get(Calendar.YEAR);
+        mSolveDate = months[solveDate.get(Calendar.MONTH)] + " " + solveDate.get(Calendar.DAY_OF_MONTH) + ", " + solveDate.get(Calendar.YEAR);
         int daysCount = solveDate.get(Calendar.DAY_OF_YEAR) - registeredDate.get(Calendar.DAY_OF_YEAR);
-        String daysWord = " днів";
+        String daysWord = mContext.getString(R.string.dniv_list_text);
         if (daysCount % 100 == 11 | daysCount % 100 == 12 | daysCount % 100 == 13 | daysCount % 100 == 14)
-            daysWord = " днів";
-        else if (daysCount % 10 == 1) daysWord = " день";
+            daysWord = mContext.getString(R.string.dniv_list_text);
+        else if (daysCount % 10 == 1) daysWord = mContext.getString(R.string.den_list_text);
         else if ((daysCount % 10 == 2) | (daysCount % 10 == 3) | (daysCount % 10 == 4))
-            daysWord = " дні";
+            daysWord = mContext.getString(R.string.dni_list_text);
         mDays = Integer.toString(daysCount) + daysWord;
         mTitle = problemTitle;
         mLikeCount = likeCount;
         mType = type;
-        if (daysCount == 0) mDays = "терміново";
+        if (daysCount == 0) mDays = mContext.getString(R.string.urgent_list_text);
         mPictures = new ArrayList<>();
-        mState = "В роботі";
+        mState = mContext.getString(R.string.in_progress_state_text);
     }
 
     public String getState() {
@@ -81,14 +83,14 @@ public class ProblemEvent implements Parcelable {
     public void setState(State state) {
         switch (state) {
             case IN_PROGRESS:
-                mState = "В роботі";
+                mState = mContext.getString(R.string.in_progress_state_text);
                 break;
             case COMPLETE:
-                mState = "Виконано";
-                mDays = "викон.";
+                mState = mContext.getString(R.string.complete_state_text);
+                mDays = mContext.getString(R.string.complete_list_text);
                 break;
             case WAITING:
-                mState = "Очікує";
+                mState = mContext.getString(R.string.awaits_state_text);
                 break;
         }
     }

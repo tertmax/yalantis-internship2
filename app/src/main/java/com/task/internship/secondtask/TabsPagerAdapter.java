@@ -1,5 +1,6 @@
 package com.task.internship.secondtask;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -7,29 +8,31 @@ import android.support.v4.app.FragmentPagerAdapter;
 
 
 public class TabsPagerAdapter extends FragmentPagerAdapter {
+    private Context mContext;
 
-    public TabsPagerAdapter(FragmentManager fm) {
+    public TabsPagerAdapter(FragmentManager fm, Context context) {
         super(fm);
+        mContext = context;
     }
 
     @Override
     public Fragment getItem(int position) {
         Bundle recyclerKeyBundle = new Bundle();
-        FragmentRecyclerView recPageFrag = null;
-        recyclerKeyBundle.putSerializable("recyclerKey", FragmentRecyclerView.RecyclerKey.IN_PROGRESS);
-        recPageFrag = new FragmentRecyclerView();
-        recPageFrag.setArguments(recyclerKeyBundle);
+        InProgressCompleteFragment inProgressCompleteFragment;
+        recyclerKeyBundle.putSerializable(InProgressCompleteFragment.BUNDLE_KEY, InProgressCompleteFragment.InProgressCompleteFragmentKey.IN_PROGRESS);
+        inProgressCompleteFragment = new InProgressCompleteFragment();
+        inProgressCompleteFragment.setArguments(recyclerKeyBundle);
 
         switch (position) {
             case 0:
-                return recPageFrag;
+                return inProgressCompleteFragment;
             case 1:
-                recyclerKeyBundle.putSerializable("recyclerKey", FragmentRecyclerView.RecyclerKey.COMPLETE);
-                recPageFrag = new FragmentRecyclerView();
-                recPageFrag.setArguments(recyclerKeyBundle);
-                return recPageFrag;
+                recyclerKeyBundle.putSerializable(InProgressCompleteFragment.BUNDLE_KEY, InProgressCompleteFragment.InProgressCompleteFragmentKey.COMPLETE);
+                inProgressCompleteFragment = new InProgressCompleteFragment();
+                inProgressCompleteFragment.setArguments(recyclerKeyBundle);
+                return inProgressCompleteFragment;
             default:
-                return new FragmentListView();
+                return new AwaitingFragment();
         }
 
     }
@@ -43,11 +46,11 @@ public class TabsPagerAdapter extends FragmentPagerAdapter {
     public CharSequence getPageTitle(int position) {
         switch (position) {
             case 0:
-                return "В РОБОТІ";
+                return mContext.getString(R.string.in_progress_tab_title);
             case 1:
-                return "ВИКОНАНО";
+                return mContext.getString(R.string.complete_tab_title);
             case 2:
-                return "ОЧІКУЄ";
+                return mContext.getString(R.string.awaits_tab_title);
             default:
                 return null;
         }

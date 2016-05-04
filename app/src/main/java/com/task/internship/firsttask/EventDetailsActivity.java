@@ -1,4 +1,4 @@
-package com.task.internship.secondtask;
+package com.task.internship.firsttask;
 
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
@@ -13,10 +13,14 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.task.internship.secondtask.InProgressCompleteFragment;
+import com.task.internship.secondtask.ProblemEvent;
+import com.task.internship.secondtask.R;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivityTask1 extends AppCompatActivity {
+public class EventDetailsActivity extends AppCompatActivity {
 
     private ProblemEvent mPassedEvent;
 
@@ -37,7 +41,7 @@ public class MainActivityTask1 extends AppCompatActivity {
                     int id = v.getId();
                     if (id > 0) {
 
-                        Toast.makeText(MainActivityTask1.this, getResources().getResourceName(v.getId()),
+                        Toast.makeText(EventDetailsActivity.this, getResources().getResourceName(v.getId()),
                                 Toast.LENGTH_SHORT).show();
                     }
                 }
@@ -48,7 +52,7 @@ public class MainActivityTask1 extends AppCompatActivity {
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
-        mPassedEvent = getIntent().getParcelableExtra("pe");
+        mPassedEvent = getIntent().getParcelableExtra(InProgressCompleteFragment.EXTRA_KEY);
         initData();
         initRecyclerView();
     }
@@ -68,31 +72,31 @@ public class MainActivityTask1 extends AppCompatActivity {
     private void initData() {
         setTitle(mPassedEvent.getTitle());
 
-        TextView tv = (TextView) findViewById(R.id.public_utilities_text);
-        tv.setText(mPassedEvent.getDescription());
+        TextView textViewToFill = (TextView) findViewById(R.id.public_utilities_text);
+        textViewToFill.setText(mPassedEvent.getDescription());
 
-        tv = (TextView) findViewById(R.id.date_registered_text);
-        tv.setText(mPassedEvent.getRegisteredDate());
+        textViewToFill = (TextView) findViewById(R.id.date_registered_text);
+        textViewToFill.setText(mPassedEvent.getRegisteredDate());
 
-        tv = (TextView) findViewById(R.id.date_created_text);
-        tv.setText(mPassedEvent.getFirstDate());
+        textViewToFill = (TextView) findViewById(R.id.date_created_text);
+        textViewToFill.setText(mPassedEvent.getFirstDate());
 
-        tv = (TextView) findViewById(R.id.date_solve_text);
-        tv.setText(mPassedEvent.getSolveDate());
+        textViewToFill = (TextView) findViewById(R.id.date_solve_text);
+        textViewToFill.setText(mPassedEvent.getSolveDate());
 
-        tv = (TextView) findViewById(R.id.organization_responsible_text);
-        tv.setText(mPassedEvent.getResponsible());
+        textViewToFill = (TextView) findViewById(R.id.organization_responsible_text);
+        textViewToFill.setText(mPassedEvent.getResponsible());
 
-        tv = (TextView) findViewById(R.id.in_progress_text);
-        tv.setText(mPassedEvent.getState());
+        textViewToFill = (TextView) findViewById(R.id.in_progress_text);
+        textViewToFill.setText(mPassedEvent.getState());
 
         if (mPassedEvent.getState().equals("Виконано"))
-            tv.setBackground(ContextCompat.getDrawable(this, R.drawable.shape_green));
+            textViewToFill.setBackground(ContextCompat.getDrawable(this, R.drawable.shape_green));
         else if (mPassedEvent.getState().equals("Очікує"))
-            tv.setBackground(ContextCompat.getDrawable(this, R.drawable.shape_grey));
+            textViewToFill.setBackground(ContextCompat.getDrawable(this, R.drawable.shape_grey));
 
-        tv = (TextView) findViewById(R.id.details_text);
-        tv.setText(mPassedEvent.getDetails() + "\nАдреса: " + mPassedEvent.getAddress());
+        textViewToFill = (TextView) findViewById(R.id.details_text);
+        textViewToFill.setText(mPassedEvent.getDetails() + "\nАдреса: " + mPassedEvent.getAddress());
     }
 
     private List<View> getAllChildren(View v) {

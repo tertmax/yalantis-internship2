@@ -12,26 +12,26 @@ import android.widget.ListView;
 
 import com.shamanland.fab.FloatingActionButton;
 import com.shamanland.fab.ShowHideOnScroll;
+import com.task.internship.firsttask.EventDetailsActivity;
 
 import java.util.List;
 
-public class FragmentListView extends Fragment {
+public class AwaitingFragment extends Fragment {
 
-    private FragmentListViewAdapter mAdapter;
+    private EventsListViewAdapter mAdapter;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         ViewGroup rootView = (ViewGroup) inflater.inflate(
                 R.layout.fragment_content_listview, container, false);
-
         return rootView;
     }
 
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        List<ProblemEvent> dataSet = InitData.getListData();
-        mAdapter = new FragmentListViewAdapter(getActivity(), dataSet);
+        List<ProblemEvent> dataSet = InitData.getListData(getActivity());
+        mAdapter = new EventsListViewAdapter(getActivity(), dataSet);
 
         ListView listView = (ListView) getActivity().findViewById(android.R.id.list);
         FloatingActionButton fab = (FloatingActionButton) getActivity().findViewById(R.id.fab);
@@ -40,9 +40,9 @@ public class FragmentListView extends Fragment {
             listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    Intent intent = new Intent(getContext(), MainActivityTask1.class);
-                    ProblemEvent pe = (ProblemEvent) mAdapter.getItem(position);
-                    intent.putExtra("pe", pe);
+                    Intent intent = new Intent(getContext(), EventDetailsActivity.class);
+                    ProblemEvent problemEvent = mAdapter.getItem(position);
+                    intent.putExtra(InProgressCompleteFragment.EXTRA_KEY, problemEvent);
                     startActivity(intent);
                 }
             });

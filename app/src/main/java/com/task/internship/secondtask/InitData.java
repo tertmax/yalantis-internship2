@@ -1,5 +1,7 @@
 package com.task.internship.secondtask;
 
+import android.content.Context;
+
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
@@ -7,7 +9,16 @@ import java.util.List;
 
 public class InitData {
 
-    public static List<ProblemEvent> getRecyclerOneData() {
+    private static List<ProblemEvent> recyclerOneData;
+    private static List<ProblemEvent> recyclerTwoData;
+    private static List<ProblemEvent> listData;
+
+    public static List<ProblemEvent> getRecyclerOneData(Context context) {
+
+        if (recyclerOneData != null) {
+            return recyclerOneData;
+        }
+
         List<ProblemEvent> dataSet = new ArrayList<>();
 
         Calendar firstDate = new GregorianCalendar(2016, 4, 15);
@@ -15,7 +26,7 @@ public class InitData {
         Calendar solveDate = new GregorianCalendar(2016, 4, 21);
         ProblemEvent pe = new ProblemEvent("Комунальне господарство",
                 "Дніпропетровськ, вул. Б. Кротова, 22", "Дніпропетровський МВК",
-                firstDate, registeredDate, solveDate, "CE-1234567", 13, ProblemEvent.ProblemType.TYPE_UTILITY);
+                firstDate, registeredDate, solveDate, "CE-1234567", 13, ProblemEvent.ProblemType.TYPE_UTILITY, context);
         pe.addPicture("http://goo.gl/rOf8I0");
         pe.addPicture("http://goo.gl/O7qqhg");
         pe.addPicture("http://goo.gl/la1Bdi");
@@ -29,7 +40,7 @@ public class InitData {
         solveDate = new GregorianCalendar(2016, 4, 20);
         pe = new ProblemEvent("Благоустрій та будівництво", "Дніпропетровськ, вул. Олеся Гончара, 13",
                 "Дніпропетровський МВК", firstDate, registeredDate, solveDate, "CE-9876543", 19,
-                ProblemEvent.ProblemType.TYPE_CITY);
+                ProblemEvent.ProblemType.TYPE_CITY, context);
         pe.addPicture("https://goo.gl/LrXz02");
         pe.addPicture("https://goo.gl/N99KlS");
         pe.addPicture("http://goo.gl/jpkgSs");
@@ -43,7 +54,7 @@ public class InitData {
         solveDate = new GregorianCalendar(2016, 4, 18);
         pe = new ProblemEvent("Заміна спецавтомобілів швидкої допомоги", "Дніпропетровськ, вул. Стромцова, 1",
                 "Дніпропетровський МВК", firstDate, registeredDate, solveDate, "CE-1029384", 7,
-                ProblemEvent.ProblemType.TYPE_TRANSPORT);
+                ProblemEvent.ProblemType.TYPE_TRANSPORT, context);
         pe.addPicture("http://goo.gl/ASLfxZ");
         pe.addPicture("http://goo.gl/mdhM9A");
         pe.addPicture("http://goo.gl/DPElD4");
@@ -56,7 +67,7 @@ public class InitData {
         solveDate = new GregorianCalendar(2016, 4, 19);
         pe = new ProblemEvent("Борг за електроенергію", "Дніпропетровськ, просп. Поля, 43",
                 "Дніпропетровський МВК", firstDate, registeredDate, solveDate, "CE-9182736", 5,
-                ProblemEvent.ProblemType.TYPE_ELECTRICITY);
+                ProblemEvent.ProblemType.TYPE_ELECTRICITY, context);
         pe.addPicture("http://goo.gl/jpkgSs");
         pe.addPicture("https://goo.gl/znNmDv");
         pe.addPicture("http://goo.gl/oPdx9C");
@@ -69,7 +80,7 @@ public class InitData {
         solveDate = new GregorianCalendar(2016, 4, 23);
         pe = new ProblemEvent("Комунальне господарство", "Дніпропетровськ, вул. Харківська, 3",
                 "Дніпропетровський МВК", firstDate, registeredDate, solveDate, "CE-6574839", 23,
-                ProblemEvent.ProblemType.TYPE_UTILITY);
+                ProblemEvent.ProblemType.TYPE_UTILITY, context);
         pe.addPicture("https://goo.gl/Jt55Bl");
         pe.addPicture("https://goo.gl/h6DEk8");
         pe.addPicture("http://goo.gl/5aRPe0");
@@ -82,7 +93,7 @@ public class InitData {
         solveDate = new GregorianCalendar(2016, 4, 20);
         pe = new ProblemEvent("Питання щодо нового маршрутного таксі",
                 "Дніпропетровськ, вул. Панікахи", "Дніпропетровський МВК", firstDate, registeredDate,
-                solveDate, "CE-5283746", 14, ProblemEvent.ProblemType.TYPE_TRANSPORT);
+                solveDate, "CE-5283746", 14, ProblemEvent.ProblemType.TYPE_TRANSPORT, context);
         pe.addPicture("http://goo.gl/T4ULNf");
         pe.addPicture("http://goo.gl/5lzTmj");
         pe.addPicture("http://goo.gl/NWbTuE");
@@ -95,7 +106,7 @@ public class InitData {
         solveDate = new GregorianCalendar(2016, 4, 19);
         pe = new ProblemEvent("Борг за електроенергію", "Дніпропетровськ, просп. Гагаріна, 22",
                 "Дніпропетровський МВК", firstDate, registeredDate, solveDate, "CE-1765234", 15,
-                ProblemEvent.ProblemType.TYPE_ELECTRICITY);
+                ProblemEvent.ProblemType.TYPE_ELECTRICITY, context);
         pe.addPicture("https://goo.gl/vuJNpW");
         pe.addPicture("https://goo.gl/znNmDv");
         pe.addPicture("http://goo.gl/jpkgSs");
@@ -108,7 +119,7 @@ public class InitData {
         solveDate = new GregorianCalendar(2016, 4, 19);
         pe = new ProblemEvent("Благоустрій та будівництво", "Дніпропетровськ, вул. Космічна, 1",
                 "Дніпропетровський МВК", firstDate, registeredDate, solveDate, "CE-7534745", 7,
-                ProblemEvent.ProblemType.TYPE_CITY);
+                ProblemEvent.ProblemType.TYPE_CITY, context);
         pe.addPicture("https://goo.gl/MdzU0o");
         pe.addPicture("http://goo.gl/TYniXQ");
         pe.addPicture("https://goo.gl/tWeNV9");
@@ -121,7 +132,7 @@ public class InitData {
         solveDate = new GregorianCalendar(2016, 4, 30);
         pe = new ProblemEvent("Ремонт транспорта на маршруті №157", "Дніпропетровськ, просп. Петровського, 1",
                 "Дніпропетровський МВК", firstDate, registeredDate, solveDate, "CE-8475637", 24,
-                ProblemEvent.ProblemType.TYPE_TRANSPORT);
+                ProblemEvent.ProblemType.TYPE_TRANSPORT, context);
         pe.addPicture("http://goo.gl/T4ULNf");
         pe.addPicture("http://goo.gl/5lzTmj");
         pe.addPicture("http://goo.gl/NWbTuE");
@@ -134,17 +145,23 @@ public class InitData {
         solveDate = new GregorianCalendar(2016, 4, 16);
         pe = new ProblemEvent("Комунальне господарство", "Дніпропетровськ, вул. Московська, 8",
                 "Дніпропетровський МВК", firstDate, registeredDate, solveDate, "CE-1243657", 3,
-                ProblemEvent.ProblemType.TYPE_UTILITY);
+                ProblemEvent.ProblemType.TYPE_UTILITY, context);
         pe.addPicture("http://goo.gl/la1Bdi");
         pe.addPicture("https://goo.gl/Pbv8Tc");
         pe.addPicture("https://goo.gl/EFUVJ3");
         pe.setState(ProblemEvent.State.IN_PROGRESS);
         pe.setDetails("Вирізаний телефонний кабель.");
         dataSet.add(pe);
+
+        recyclerOneData = dataSet;
+
         return dataSet;
     }
 
-    public static List<ProblemEvent> getRecyclerTwoData() {
+    public static List<ProblemEvent> getRecyclerTwoData(Context context) {
+        if (recyclerTwoData != null) {
+            return recyclerTwoData;
+        }
         List<ProblemEvent> dataSet = new ArrayList<>();
 
         Calendar firstDate = new GregorianCalendar(2016, 3, 7);
@@ -152,7 +169,7 @@ public class InitData {
         Calendar solveDate = new GregorianCalendar(2016, 3, 10);
         ProblemEvent pe = new ProblemEvent("Дорожньо-транспортна пригода",
                 "Дніпропетровськ, вул. Б. Панікахи, 2", "Дніпропетровський МВК",
-                firstDate, registeredDate, solveDate, "CE-3214567", 18, ProblemEvent.ProblemType.TYPE_TRANSPORT);
+                firstDate, registeredDate, solveDate, "CE-3214567", 18, ProblemEvent.ProblemType.TYPE_TRANSPORT, context);
         pe.addPicture("http://goo.gl/WSbhJC");
         pe.addPicture("http://goo.gl/i3gYV8");
         pe.setState(ProblemEvent.State.COMPLETE);
@@ -164,7 +181,7 @@ public class InitData {
         solveDate = new GregorianCalendar(2016, 3, 14);
         pe = new ProblemEvent("Заборгованість ", "Дніпропетровськ, вул. Січових Стрільців, 19",
                 "Дніпропетровський МВК", firstDate, registeredDate, solveDate, "CE-9876543", 5,
-                ProblemEvent.ProblemType.TYPE_ELECTRICITY);
+                ProblemEvent.ProblemType.TYPE_ELECTRICITY, context);
         pe.addPicture("https://goo.gl/LrXz02");
         pe.addPicture("https://goo.gl/N99KlS");
         pe.addPicture("http://goo.gl/jpkgSs");
@@ -178,7 +195,7 @@ public class InitData {
         solveDate = new GregorianCalendar(2016, 3, 4);
         pe = new ProblemEvent("Дорожньо-транспортна пригода", "Дніпропетровськ, вул. Вигадана, 2",
                 "Дніпропетровський МВК", firstDate, registeredDate, solveDate, "CE-3229384", 4,
-                ProblemEvent.ProblemType.TYPE_TRANSPORT);
+                ProblemEvent.ProblemType.TYPE_TRANSPORT, context);
         pe.addPicture("http://goo.gl/ssJUZ3");
         pe.addPicture("http://goo.gl/TKelvV");
         pe.setState(ProblemEvent.State.COMPLETE);
@@ -190,7 +207,7 @@ public class InitData {
         solveDate = new GregorianCalendar(2016, 3, 8);
         pe = new ProblemEvent("Борг за електроенергію", "Дніпропетровськ, вулю Одеська, 3",
                 "Дніпропетровський МВК", firstDate, registeredDate, solveDate, "CE-5482736", 12,
-                ProblemEvent.ProblemType.TYPE_ELECTRICITY);
+                ProblemEvent.ProblemType.TYPE_ELECTRICITY, context);
         pe.addPicture("https://goo.gl/znNmDv");
         pe.addPicture("https://goo.gl/h6DEk8");
         pe.addPicture("http://goo.gl/jpkgSs");
@@ -206,7 +223,7 @@ public class InitData {
         solveDate = new GregorianCalendar(2016, 2, 26);
         pe = new ProblemEvent("Комунальне господарство", "Дніпропетровськ, вул. Харківська, 3",
                 "Дніпропетровський МВК", firstDate, registeredDate, solveDate, "CE-6444839", 3,
-                ProblemEvent.ProblemType.TYPE_UTILITY);
+                ProblemEvent.ProblemType.TYPE_UTILITY, context);
         pe.addPicture("https://goo.gl/Jt55Bl");
         pe.addPicture("http://goo.gl/5aRPe0");
         pe.addPicture("http://vk.cc/544Y2g");
@@ -219,7 +236,7 @@ public class InitData {
         solveDate = new GregorianCalendar(2016, 2, 26);
         pe = new ProblemEvent("Зміна графіку роботи маршрутного таксі",
                 "Дніпропетровськ, вул. Таксійна, 1", "Дніпропетровський МВК", firstDate, registeredDate,
-                solveDate, "CE-5433746", 14, ProblemEvent.ProblemType.TYPE_TRANSPORT);
+                solveDate, "CE-5433746", 14, ProblemEvent.ProblemType.TYPE_TRANSPORT, context);
         pe.addPicture("https://goo.gl/3gTEQN");
         pe.addPicture("https://goo.gl/wqDODA");
         pe.addPicture("https://goo.gl/3gTEQN");
@@ -232,7 +249,7 @@ public class InitData {
         solveDate = new GregorianCalendar(2016, 2, 19);
         pe = new ProblemEvent("Комунальне господарство", "Дніпропетровськ, ж/м Червоний камінь",
                 "Дніпропетровський МВК", firstDate, registeredDate, solveDate, "CE-13345234", 1,
-                ProblemEvent.ProblemType.TYPE_UTILITY);
+                ProblemEvent.ProblemType.TYPE_UTILITY, context);
         pe.addPicture("https://goo.gl/MdzU0o");
         pe.addPicture("http://goo.gl/TYniXQ");
         pe.addPicture("http://goo.gl/jpkgSs");
@@ -245,7 +262,7 @@ public class InitData {
         solveDate = new GregorianCalendar(2016, 2, 19);
         pe = new ProblemEvent("Сплата заборгованості", "Дніпропетровськ, вул. Донецька, 65",
                 "Дніпропетровський МВК", firstDate, registeredDate, solveDate, "CE-4134745", 17,
-                ProblemEvent.ProblemType.TYPE_ELECTRICITY);
+                ProblemEvent.ProblemType.TYPE_ELECTRICITY, context);
         pe.addPicture("http://goo.gl/la1Bdi");
         pe.addPicture("https://goo.gl/Pbv8Tc");
         pe.addPicture("https://goo.gl/vuJNpW");
@@ -258,7 +275,7 @@ public class InitData {
         solveDate = new GregorianCalendar(2016, 2, 15);
         pe = new ProblemEvent("Зміна графіку роботи маршрутного таксі",
                 "Дніпропетровськ, вул. Таксійна, 89", "Дніпропетровський МВК", firstDate, registeredDate,
-                solveDate, "CE-7653746", 1, ProblemEvent.ProblemType.TYPE_TRANSPORT);
+                solveDate, "CE-7653746", 1, ProblemEvent.ProblemType.TYPE_TRANSPORT, context);
         pe.addPicture("https://goo.gl/3gTEQN");
         pe.addPicture("https://goo.gl/3gTEQN");
         pe.addPicture("https://goo.gl/wqDODA");
@@ -266,10 +283,17 @@ public class InitData {
         pe.setDetails("Запит на внесення коректировок у маршрут №88.");
         dataSet.add(pe);
 
+        recyclerTwoData = dataSet;
+
         return dataSet;
     }
 
-    public static List<ProblemEvent> getListData() {
+    public static List<ProblemEvent> getListData(Context context) {
+
+        if (listData != null) {
+            return listData;
+        }
+
         List<ProblemEvent> dataSet = new ArrayList<>();
 
         Calendar firstDate = new GregorianCalendar(2016, 4, 19);
@@ -277,7 +301,7 @@ public class InitData {
         Calendar solveDate = new GregorianCalendar(2016, 5, 30);
         ProblemEvent pe = new ProblemEvent("Благоустрій та будівництво",
                 "Дніпропетровськ, вул. Вулиця, 31", "Дніпропетровський МВК",
-                firstDate, registeredDate, solveDate, "CE-7654567", 13, ProblemEvent.ProblemType.TYPE_CITY);
+                firstDate, registeredDate, solveDate, "CE-7654567", 13, ProblemEvent.ProblemType.TYPE_CITY, context);
         pe.addPicture("https://goo.gl/N99KlS");
         pe.addPicture("http://goo.gl/la1Bdi");
         pe.addPicture("http://goo.gl/5aRPe0");
@@ -290,7 +314,7 @@ public class InitData {
         solveDate = new GregorianCalendar(2016, 5, 12);
         pe = new ProblemEvent("Благоустрій та будівництво", "Дніпропетровськ, вул. Полтавська, 32",
                 "Дніпропетровський МВК", firstDate, registeredDate, solveDate, "CE-1643657", 13,
-                ProblemEvent.ProblemType.TYPE_CITY);
+                ProblemEvent.ProblemType.TYPE_CITY, context);
         pe.addPicture("https://goo.gl/znNmDv");
         pe.addPicture("https://goo.gl/tWeNV9");
         pe.addPicture("https://goo.gl/EFUVJ3");
@@ -303,7 +327,7 @@ public class InitData {
         solveDate = new GregorianCalendar(2016, 5, 15);
         pe = new ProblemEvent("Комунальне господарство", "Дніпропетровськ, вул. Тестова, 43",
                 "Дніпропетровський МВК", firstDate, registeredDate, solveDate, "CE-9876565", 19,
-                ProblemEvent.ProblemType.TYPE_UTILITY);
+                ProblemEvent.ProblemType.TYPE_UTILITY, context);
         pe.addPicture("http://goo.gl/la1Bdi");
         pe.addPicture("https://goo.gl/LrXz02");
         pe.addPicture("http://goo.gl/jpkgSs");
@@ -316,7 +340,7 @@ public class InitData {
         solveDate = new GregorianCalendar(2016, 5, 7);
         pe = new ProblemEvent("Борг за електроенергію", "Дніпропетровськ, просп. Слабожанський, 34",
                 "Дніпропетровський МВК", firstDate, registeredDate, solveDate, "CE-1312736", 1,
-                ProblemEvent.ProblemType.TYPE_ELECTRICITY);
+                ProblemEvent.ProblemType.TYPE_ELECTRICITY, context);
         pe.addPicture("http://goo.gl/jpkgSs");
         pe.addPicture("https://goo.gl/znNmDv");
         pe.addPicture("http://goo.gl/oPdx9C");
@@ -329,7 +353,7 @@ public class InitData {
         solveDate = new GregorianCalendar(2016, 5, 6);
         pe = new ProblemEvent("Комунальне господарство", "Дніпропетровськ, вул. Кексова, 23",
                 "Дніпропетровський МВК", firstDate, registeredDate, solveDate, "CE-6484833", 11,
-                ProblemEvent.ProblemType.TYPE_UTILITY);
+                ProblemEvent.ProblemType.TYPE_UTILITY, context);
         pe.addPicture("https://goo.gl/Jt55Bl");
         pe.addPicture("https://goo.gl/h6DEk8");
         pe.addPicture("http://goo.gl/5aRPe0");
@@ -342,7 +366,7 @@ public class InitData {
         solveDate = new GregorianCalendar(2016, 5, 3);
         pe = new ProblemEvent("Питання щодо нового маршрутного таксі",
                 "Дніпропетровськ, вул. Панікахи", "Дніпропетровський МВК", firstDate, registeredDate,
-                solveDate, "CE-5283746", 8, ProblemEvent.ProblemType.TYPE_TRANSPORT);
+                solveDate, "CE-5283746", 8, ProblemEvent.ProblemType.TYPE_TRANSPORT, context);
         pe.addPicture("https://goo.gl/3gTEQN");
         pe.addPicture("https://goo.gl/wqDODA");
         pe.addPicture("https://goo.gl/3gTEQN");
@@ -355,7 +379,7 @@ public class InitData {
         solveDate = new GregorianCalendar(2016, 5, 1);
         pe = new ProblemEvent("Борг за електроенергію", "Дніпропетровськ, вул. Козацька, 6",
                 "Дніпропетровський МВК", firstDate, registeredDate, solveDate, "CE-11666534", 6,
-                ProblemEvent.ProblemType.TYPE_ELECTRICITY);
+                ProblemEvent.ProblemType.TYPE_ELECTRICITY, context);
         pe.addPicture("https://goo.gl/vuJNpW");
         pe.addPicture("https://goo.gl/znNmDv");
         pe.addPicture("http://goo.gl/jpkgSs");
@@ -368,7 +392,7 @@ public class InitData {
         solveDate = new GregorianCalendar(2016, 4, 30);
         pe = new ProblemEvent("Благоустрій та будівництво", "Дніпропетровськ, вул. Ворошилова, 14",
                 "Дніпропетровський МВК", firstDate, registeredDate, solveDate, "CE-7516853", 10,
-                ProblemEvent.ProblemType.TYPE_CITY);
+                ProblemEvent.ProblemType.TYPE_CITY, context);
         pe.addPicture("https://goo.gl/MdzU0o");
         pe.addPicture("http://goo.gl/TYniXQ");
         pe.addPicture("https://goo.gl/tWeNV9");
@@ -382,7 +406,7 @@ public class InitData {
         solveDate = new GregorianCalendar(2016, 4, 27);
         pe = new ProblemEvent("Комунальне господарство", "Дніпропетровськ, вул. Київська, 37",
                 "Дніпропетровський МВК", firstDate, registeredDate, solveDate, "CE-1375651", 9,
-                ProblemEvent.ProblemType.TYPE_UTILITY);
+                ProblemEvent.ProblemType.TYPE_UTILITY, context);
         pe.addPicture("http://goo.gl/la1Bdi");
         pe.addPicture("https://goo.gl/Pbv8Tc");
         pe.addPicture("https://goo.gl/EFUVJ3");
@@ -395,13 +419,15 @@ public class InitData {
         solveDate = new GregorianCalendar(2016, 4, 28);
         pe = new ProblemEvent("Благоустрій та будівництво", "Дніпропетровськ, вул. Остання, 1",
                 "Дніпропетровський МВК", firstDate, registeredDate, solveDate, "CE-1883657", 99,
-                ProblemEvent.ProblemType.TYPE_CITY);
+                ProblemEvent.ProblemType.TYPE_CITY, context);
         pe.addPicture("https://goo.gl/znNmDv");
         pe.addPicture("https://goo.gl/EFUVJ3");
         pe.addPicture("https://goo.gl/tWeNV9");
         pe.setState(ProblemEvent.State.WAITING);
         pe.setDetails("Якась остання тестова інформація.");
         dataSet.add(pe);
+
+        listData = dataSet;
 
         return dataSet;
     }

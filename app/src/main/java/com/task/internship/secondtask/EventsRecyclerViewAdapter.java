@@ -13,14 +13,14 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-public class FragmentRecyclerViewAdapter extends RecyclerView.Adapter<FragmentRecyclerViewAdapter.FragmentViewHolder> {
+public class EventsRecyclerViewAdapter extends RecyclerView.Adapter<EventsRecyclerViewAdapter.FragmentViewHolder> {
 
     private LayoutInflater mInflater;
     private List<ProblemEvent> mDataset;
     private Context mContext;
     private OnEventClickListener clickListener;
 
-    public FragmentRecyclerViewAdapter(Context context, @NonNull List<ProblemEvent> dataSet) {
+    public EventsRecyclerViewAdapter(Context context, @NonNull List<ProblemEvent> dataSet) {
         mInflater = LayoutInflater.from(context);
         mContext = context;
         mDataset = dataSet;
@@ -50,7 +50,7 @@ public class FragmentRecyclerViewAdapter extends RecyclerView.Adapter<FragmentRe
     }
 
     @Override
-    public void onBindViewHolder(FragmentRecyclerViewAdapter.FragmentViewHolder holder, int position) {
+    public void onBindViewHolder(EventsRecyclerViewAdapter.FragmentViewHolder holder, int position) {
         ProblemEvent currentEvent = mDataset.get(position);
         Picasso.with(mContext)
                 .load(currentEvent.getTypeIconResource())

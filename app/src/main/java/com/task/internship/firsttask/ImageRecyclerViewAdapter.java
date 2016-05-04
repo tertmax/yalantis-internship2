@@ -1,4 +1,4 @@
-package com.task.internship.secondtask;
+package com.task.internship.firsttask;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
+import com.task.internship.secondtask.R;
 
 import java.util.List;
 
@@ -45,11 +46,12 @@ public class ImageRecyclerViewAdapter extends RecyclerView.Adapter<ImageRecycler
         public ImageViewHolder(View itemView) {
             super(itemView);
             recyclerImage = (ImageView) itemView.findViewById(R.id.image_rec);
+            final String toastText = mContext.getString(R.string.toast_image_recyclerview);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(mContext, " RecyclerView's image " +
-                                    (getAdapterPosition() + 1) + ": " +
+                    Toast.makeText(mContext, toastText +
+                                    (getAdapterPosition() + 1) + " " +
                                     (mDataSet.get(getAdapterPosition())),
                             Toast.LENGTH_SHORT).show();
                 }
