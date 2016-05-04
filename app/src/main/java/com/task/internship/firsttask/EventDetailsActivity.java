@@ -59,9 +59,10 @@ public class EventDetailsActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        String backToast = getString(R.string.toast_back_button);
         switch (item.getItemId()) {
             case android.R.id.home:
-                Toast.makeText(this, "Back button", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, backToast, Toast.LENGTH_SHORT).show();
                 onBackPressed();
                 return true;
             default:
@@ -70,6 +71,8 @@ public class EventDetailsActivity extends AppCompatActivity {
     }
 
     private void initData() {
+        String detailsText;
+
         setTitle(mPassedEvent.getTitle());
 
         TextView textViewToFill = (TextView) findViewById(R.id.public_utilities_text);
@@ -90,13 +93,14 @@ public class EventDetailsActivity extends AppCompatActivity {
         textViewToFill = (TextView) findViewById(R.id.in_progress_text);
         textViewToFill.setText(mPassedEvent.getState());
 
-        if (mPassedEvent.getState().equals("Виконано"))
+        if (mPassedEvent.getState().equals(getString(R.string.complete_state_text)))
             textViewToFill.setBackground(ContextCompat.getDrawable(this, R.drawable.shape_green));
-        else if (mPassedEvent.getState().equals("Очікує"))
+        else if (mPassedEvent.getState().equals(getString(R.string.awaits_state_text)))
             textViewToFill.setBackground(ContextCompat.getDrawable(this, R.drawable.shape_grey));
 
+        detailsText = mPassedEvent.getDetails() + "\n" + mPassedEvent.getAddress();
         textViewToFill = (TextView) findViewById(R.id.details_text);
-        textViewToFill.setText(mPassedEvent.getDetails() + "\nАдреса: " + mPassedEvent.getAddress());
+        textViewToFill.setText(detailsText);
     }
 
     private List<View> getAllChildren(View v) {

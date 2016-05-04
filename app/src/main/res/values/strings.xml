@@ -34,6 +34,7 @@
     <string name="complete_tab_title">ВИКОНАНО</string>
     <string name="toast_image_recyclerview">"RecyclerView's image "</string>
     <string name="awaits_tab_title">ОЧІКУЄ</string>
+    <string name="toast_back_button">Back button</string>
     <string-array name="urls_array">
         <item>http://img2.wikia.nocookie.net/__cb20070317195216/starwars/nl/images/6/6e/Vos_Gesal_Street.jpg</item>
         <item>http://vignette2.wikia.nocookie.net/starwars/images/0/0b/Underlevelscene.JPG/revision/latest?cb=20060712233456</item>
